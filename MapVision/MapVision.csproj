@@ -112,10 +112,15 @@
     </Compile>
     <Compile Include="Behaviors\BindableMapIconBehavior.cs" />
     <Compile Include="Helpers\NavHelper.cs" />
+    <Compile Include="Helpers\UIElementExtensions.cs" />
+    <Compile Include="Helpers\VideoFrameExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Constants\PageTokens.cs" />
+    <Compile Include="Services\IAutomaticLocationService.cs" />
     <Compile Include="Services\ILocationService.cs" />
     <Compile Include="Services\LocationService.cs" />
+    <Compile Include="Services\MapWalkerLocationService.cs" />
+    <Compile Include="TurbineNoTurbineV2.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -191,6 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <Content Include="Assets\TurbineNoTurbineV2.onnx" />
     <None Include="MapVision_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

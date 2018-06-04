@@ -13,14 +13,46 @@
     mc:Ignorable="d">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="48" />
+        </Grid.RowDefinitions>
         <maps:MapControl
             x:Name="mapControl" MapServiceToken="{Binding MapServiceToken}"
-            ZoomLevel="{x:Bind ViewModel.ZoomLevel, Mode=OneWay}" 
-            Center="{x:Bind ViewModel.Center, Mode=OneWay}" >
+            ZoomLevel="{x:Bind ViewModel.ZoomLevel, Mode=TwoWay}" 
+            Center="{x:Bind ViewModel.Center, Mode=OneWay}"
+            Style="Aerial"
+            >
             <i:Interaction.Behaviors>
                 <b:BindableMapIconBehavior MapIcons="{Binding MapIcons}" />
             </i:Interaction.Behaviors>
         </maps:MapControl>
         <TickBar/>
+        <Rectangle
+            Name="RenderWindow"
+            Height="256"
+            Width="256"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Stroke="Red"
+            />
+        <CommandBar
+            Grid.Row="1">
+            <AppBarButton
+                Icon="Save" Label="Save current window"
+                Command="{x:Bind ViewModel.SnapCurrentWindowCommand}"
+                CommandParameter="{Binding ElementName=mapControl}" />
+            <AppBarButton
+                Icon="Camera" Label="Check current window"
+                Command="{x:Bind ViewModel.CheckCurrentWindowCommand}"
+                CommandParameter="{Binding ElementName=mapControl}" />
+            <AppBarButton
+                Icon="Play" Label="Start automatic checking"
+                Command="{x:Bind ViewModel.StartAutomaticCheckingCommand}"
+                CommandParameter="{Binding ElementName=mapControl}" />
+            <AppBarButton
+                Icon="Stop" Label="Stop automatic checking"
+                Command="{x:Bind ViewModel.StopAutomaticCheckingCommand}" />
+        </CommandBar>
     </Grid>
 </Page>

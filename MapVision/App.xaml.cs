@@ -32,6 +32,7 @@ namespace MapVision
             base.ConfigureContainer();
             Container.RegisterInstance<IResourceLoader>(new ResourceLoaderAdapter(new ResourceLoader()));
             Container.RegisterType<ILocationService, LocationService>();
+            Container.RegisterType<IAutomaticLocationService, MapWalkerLocationService>();
         }
 
         protected override Task OnLaunchApplicationAsync(LaunchActivatedEventArgs args)

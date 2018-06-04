@@ -25,7 +25,7 @@
             Edit String/en-US/Resources.resw: Add a menu item title for each page
             -->
             <NavigationViewItem x:Uid="Shell_Main" Icon="Document" helpers:NavHelper.NavigateTo="Main" />
-            <NavigationViewItem x:Uid="Shell_Map" Icon="Document" helpers:NavHelper.NavigateTo="Map" />
+            <NavigationViewItem x:Uid="Shell_Map" Icon="Map" helpers:NavHelper.NavigateTo="Map" />
         </NavigationView.MenuItems>
         <NavigationView.HeaderTemplate>
             <DataTemplate>
